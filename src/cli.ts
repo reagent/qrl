@@ -19,14 +19,26 @@ program
   .name('qrl')
   .description('Generate a QR code with embedded URL')
   .requiredOption('-o, --output <OUTPUT>', 'Output QR code to file')
+  .option('-s, --silent', 'Supress messages on STDOUT', false)
   .argument('<url>', 'URL to embed')
-  .action(async (url, { output }) => {
+  .action(async (url, { output, silent }) => {
     if (!isUrlValid(url)) {
-      console.error('Invalid URL provided');
+      console.error('Error: invalid URL provided');
       process.exit(1);
     }
 
-    await QRCode.toFile(output, url);
+    try {
+      await QRCode.toFile(output, url);
+
+      if (!silent) {
+        console.log(`Wrote output file: "${output}"`);
+      }
+    } catch (e) {
+      console.error(
+        `Error: failed to write output file: "${(e as Error).message}"`,
+      );
+      process.exit(1);
+    }
   })
   .showHelpAfterError();
 
