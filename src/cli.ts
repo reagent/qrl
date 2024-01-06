@@ -2,7 +2,7 @@
 
 import { URL } from 'url';
 
-import QRCode from 'qrcode';
+import * as QRCode from 'qrcode';
 import { program } from 'commander';
 
 const isUrlValid = (url: string): boolean => {
