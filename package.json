@@ -1,6 +1,6 @@
 {
   "name": "@reagent/qrl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Patrick Reagan",
     "email": "github@the-reagans.com"
@@ -23,6 +23,8 @@
     "lint": "eslint . --ext .ts",
     "test": "jest --passWithNoTests",
     "test:coverage": "yarn test --coverage",
+    "prepublish": "yarn pack",
+    "prepack": "yarn build",
     "prebuild": "rimraf dist/",
     "build": "tsc --build tsconfig.build.json"
   },
