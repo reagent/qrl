@@ -6,7 +6,7 @@
     "email": "github@the-reagans.com"
   },
   "bin": {
-    "qrl": "./dist/cli.js"
+    "qrl": "dist/cli.js"
   },
   "license": "MIT",
   "prettier": {
