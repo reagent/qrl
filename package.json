@@ -1,7 +1,6 @@
 {
-  "name": "typescript-starter",
+  "name": "@reagent/qrl",
   "version": "1.0.0",
-  "main": "dist/index.js",
   "author": {
     "name": "Patrick Reagan",
     "email": "github@the-reagans.com"
